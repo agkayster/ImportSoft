@@ -1,0 +1,323 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	line-height: 1.6;
+	font-size: 24px;
+}
+
+.allContainer {
+	position: relative;
+	padding: 0px 10px;
+	margin-left: 160px; /* Same as the width of the sidebar */
+}
+
+.menu {
+	height: 100%;
+	width: 160px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #eee;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.menu button {
+	padding: 6px 8px 3px 4px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+	width: 10vw;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+section.section {
+	padding: 1.5rem 1.5rem;
+}
+
+.field.agentRef {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.createdate {
+	position: relative;
+	top: 20px;
+	right: 100px;
+}
+
+.poNum {
+	margin-bottom: 25px;
+}
+
+.materials {
+	margin-bottom: 30px;
+}
+
+.weight {
+	margin-bottom: 30px;
+}
+
+.twentyFt {
+	position: relative;
+	bottom: 15px;
+}
+
+.arrivalyear {
+	position: relative;
+	bottom: 15px;
+}
+
+.par {
+	position: relative;
+	bottom: 15px;
+}
+
+.supply {
+	position: relative;
+	bottom: 15px;
+}
+
+.shipping {
+	position: relative;
+	bottom: 15px;
+}
+
+.arrivalMonth {
+	position: relative;
+	bottom: 15px;
+}
+
+.dutyrate {
+	position: relative;
+	bottom: 15px;
+}
+
+.archive {
+	position: relative;
+	bottom: 15px;
+}
+
+.layer2 {
+	display: flex;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.layer3 {
+	display: flex;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.layer4 {
+	display: flex;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.lading {
+	position: relative;
+	bottom: 15px;
+}
+
+.dPaid {
+	position: relative;
+	top: 13px;
+}
+
+.delivered {
+	position: relative;
+	top: 10px;
+}
+
+.cOrigin {
+	position: relative;
+	top: 13px;
+}
+
+.impDuty {
+	position: relative;
+	top: 13px;
+}
+
+.pDest {
+	position: relative;
+	top: 8px;
+}
+
+.fM {
+	position: relative;
+	bottom: 15px;
+}
+
+.fortyFt {
+	position: relative;
+	bottom: 10px;
+}
+
+.berthLab {
+	position: relative;
+	top: 5px;
+}
+
+.cifV {
+	position: relative;
+	top: 20px;
+}
+
+.matDate {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.field.date {
+	margin-top: 50px;
+}
+
+.field.is-grouped.startpo {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 35px;
+}
+
+.field.is-grouped.groupage {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.field.is-grouped.startyear {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.field.is-grouped.startpar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.field.is-grouped.startcountry {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.field.is-grouped.startline {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.field.date {
+	display: flex;
+	justify-content: center;
+}
+
+@media only screen and (min-width: 1440px) {
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		height: 100vh;
+		line-height: 1.6;
+		font-size: 24px;
+	}
+
+	.allContainer {
+		position: relative;
+		padding: 0px 10px;
+	}
+
+	.menu {
+		font-size: 1rem;
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		height: 100%;
+		overflow: auto;
+		width: 200px;
+	}
+
+	.menu button {
+		font-size: 1rem;
+		display: flex;
+		flex-direction: column;
+		width: 10vw;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		height: 100vh;
+		line-height: 1.6;
+		font-size: 24px;
+	}
+
+	.allContainer {
+		position: relative;
+		padding: 0px 10px;
+		margin-left: 80px;
+	}
+
+	.menu {
+		height: 100%;
+		width: 160px;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: transparent;
+		overflow-x: hidden;
+		padding-top: 20px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.menu button {
+		padding: 6px 8px 3px 8px;
+		text-decoration: none;
+		font-size: 20px;
+		color: #818181;
+		width: 40vw;
+		margin-top: 0px;
+	}
+}
+
+/* @import 'bulma'; */
