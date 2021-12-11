@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PDFDisplay from '../PDFDisplay/PDFDisplay';
+// import PDFDisplay from '../PDFDisplay/PDFDisplay';
 import DutyRate from '../OtherComponents/DutyRate';
 import Archived from '../OtherComponents/Archived';
 import DutyPaid from '../OtherComponents/DutyPaid';
@@ -8,6 +8,7 @@ import DateDelivered from '../OtherComponents/DateDelivered';
 import BerthDate from '../OtherComponents/BerthDate';
 import Aside from '../AsideComponents/Aside';
 import { axiosInstance } from '../../Utils/API';
+import Button from '../OtherComponents/Button';
 
 const MaterialIndex = () => {
 	const [materials, setmaterials] = useState([]);
@@ -87,7 +88,7 @@ const MaterialIndex = () => {
 				searchValue = 'DHL';
 				break;
 			default:
-				searchValue = null;
+				searchValue = 'All';
 		}
 
 		let i = 0;
@@ -137,41 +138,49 @@ const MaterialIndex = () => {
 		setagentRefGrouping(agentRefGroup);
 	};
 
+	// Get all agent reference numbers //
+	const agentRefNo = agentRefGrouping.map((agent) => {
+		return agent.agentrefnumber;
+	});
 	//Handles changes when you select a particular agent reference number //
 	const handleAgentRefChange = (e) => {
 		const { value } = e.target;
 		const getDetails = agentRefGrouping.find(
 			(agent) => agent.agentrefnumber === value
 		);
-		setagentRefNum(getDetails.agentrefnumber);
-		setpoNumber(getDetails.poNum);
-		setnewMaterials(getDetails.materials);
-		setweight(getDetails.weight);
-		setberth(getDetails.berth);
-		settwentyFtGroupage(getDetails.twentyFtGroupage);
-		setfortyFt(getDetails.fourtyFt);
-		setdateDelivered(getDetails.dateDelivered);
-		setarrivalMonth(getDetails.arrivalMonth);
-		setarrivalYear(getDetails.arrivalYear);
-		setformM(getDetails.formM);
-		setdutyPaid(getDetails.dutyPaid);
-		setdutyRate(getDetails.dutyRate);
-		sethsCodePar(getDetails.hscodePar);
-		setbillOfLading(getDetails.billOfLading);
-		setimportDuty(getDetails.importDuty);
-		setsupplierName(getDetails.supplierName);
-		setcountryOfSupply(getDetails.countryOfSupply);
-		setportOfOrigin(getDetails.portOfOrigin);
-		setcountryOfOrigin(getDetails.countryOfOrigin);
-		setcifValue(getDetails.cifValue);
-		setshippingLine(getDetails.shippingLine);
-		sethscodeFormM(getDetails.hscodeFormM);
-		setportOfDestination(getDetails.portOfDestination);
-		setarchived(getDetails.archived);
-		setcreatedDate(getDetails.createdDate);
-		setFileName(getDetails.fileName);
-		setPdfLink(getDetails.pdfURLLink);
-		setPdfName(getDetails.pdfURLName);
+		agentRefNo.forEach((item) => {
+			if (value === item) {
+				setagentRefNum(getDetails.agentrefnumber);
+				setpoNumber(getDetails.poNum);
+				setnewMaterials(getDetails.materials);
+				setweight(getDetails.weight);
+				setberth(getDetails.berth);
+				settwentyFtGroupage(getDetails.twentyFtGroupage);
+				setfortyFt(getDetails.fourtyFt);
+				setdateDelivered(getDetails.dateDelivered);
+				setarrivalMonth(getDetails.arrivalMonth);
+				setarrivalYear(getDetails.arrivalYear);
+				setformM(getDetails.formM);
+				setdutyPaid(getDetails.dutyPaid);
+				setdutyRate(getDetails.dutyRate);
+				sethsCodePar(getDetails.hscodePar);
+				setbillOfLading(getDetails.billOfLading);
+				setimportDuty(getDetails.importDuty);
+				setsupplierName(getDetails.supplierName);
+				setcountryOfSupply(getDetails.countryOfSupply);
+				setportOfOrigin(getDetails.portOfOrigin);
+				setcountryOfOrigin(getDetails.countryOfOrigin);
+				setcifValue(getDetails.cifValue);
+				setshippingLine(getDetails.shippingLine);
+				sethscodeFormM(getDetails.hscodeFormM);
+				setportOfDestination(getDetails.portOfDestination);
+				setarchived(getDetails.archived);
+				setcreatedDate(getDetails.createdDate);
+				setFileName(getDetails.fileName);
+				setPdfLink(getDetails.pdfURLLink);
+				setPdfName(getDetails.pdfURLName);
+			}
+		});
 	};
 
 	// Handles changes when you select a particular material//
@@ -247,6 +256,8 @@ const MaterialIndex = () => {
 
 	console.log('get materials =>', materials);
 	console.log('get materials pdf =>', materialsPDF);
+
+	if (materials.length === 0) return <h4>Loading...</h4>;
 	return (
 		<div className='importApp'>
 			<Aside
@@ -468,10 +479,14 @@ const MaterialIndex = () => {
 									Click to view PDF
 								</label>
 								<div className='control'>
-									<PDFDisplay
+									<Button
 										pdfLink={pdfLink}
 										pdfName={pdfName}
 									/>
+									{/* <PDFDisplay
+										pdfLink={pdfLink}
+										pdfName={pdfName}
+									/> */}
 								</div>
 							</div>
 							<CreatedDate createdDate={createdDate} />

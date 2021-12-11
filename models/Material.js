@@ -70,7 +70,7 @@ const materialSchema = new Schema(
 			required: true,
 			minLength: 2,
 		},
-		archived: { type: Boolean, default: false },
+		archived: { type: Boolean, required: true, default: false },
 		user: { type: mongoose.Schema.ObjectId, ref: 'User' }, // "ref" part here points to the model we are referencing and the model is "User.js" model.
 	},
 	{

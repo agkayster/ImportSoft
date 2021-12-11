@@ -10,15 +10,14 @@ const options = {
 	cMapPacked: true,
 };
 
-const PDFDisplay = ({ pdfLink, pdfName }) => {
-	const [file, setFile] = useState(null);
+const PDFDisplay = ({ file }) => {
 	const [numPages, setNumPages] = useState(null);
 	const [pageNumber, setPageNumber] = useState(1);
 
-	const pdfPath = {
-		pdflink: pdfLink,
-		name: pdfName,
-	};
+	// const pdfPath = {
+	// 	pdflink: pdfLink,
+	// 	name: pdfName,
+	// };
 
 	/*To Prevent right click on screen*/
 	document.addEventListener('contextmenu', (event) => {
@@ -47,20 +46,12 @@ const PDFDisplay = ({ pdfLink, pdfName }) => {
 
 	return (
 		<>
-			<div className='fileLink'>
-				<button
-					type='button'
-					onClick={() => setFile(pdfPath.pdflink)}
-					className='button is-ghost'>
-					{pdfPath.name}
-				</button>
-			</div>
 			<div className='fileDocument'>
 				<Document
 					file={file}
 					options={options}
 					onLoadSuccess={onDocumentLoadSuccess}
-					externalLinkTarget="_blank">
+					externalLinkTarget='_blank'>
 					<Page pageNumber={pageNumber} />
 				</Document>
 			</div>
