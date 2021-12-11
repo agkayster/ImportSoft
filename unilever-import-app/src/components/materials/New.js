@@ -1,4 +1,4 @@
-import React, { useState, useHistory } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 // import Auth from '../../lib/Auth';
 
@@ -438,7 +438,9 @@ const New = (props) => {
 							)}
 						</div>
 						<div className='field'>
-							<label htmlFor='archiveCheckbox' className='label'>
+							<label
+								htmlFor='archiveCheckbox'
+								className='checkbox label'>
 								ARCHIVED
 							</label>
 							Tick to confirm all fields have been filled
@@ -450,6 +452,11 @@ const New = (props) => {
 								checked={isChecked}
 								onChange={handleCheckbox}
 							/>
+						</div>
+						<div className='control'>
+							<button type='submit' className='button is-primary'>
+								Submit Form
+							</button>
 						</div>
 					</form>
 				</div>
