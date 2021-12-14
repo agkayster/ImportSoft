@@ -101,35 +101,36 @@ const MaterialIndex = () => {
 				) {
 					agentRefGroup.push({
 						id: i++,
-						agentrefnumber: material.agentReference,
-						fileName: material.fileName,
+						agentrefnumber: material.agentReference.toUpperCase(),
+						fileName: material.fileName.toUpperCase(),
 						dutyRate: material.dutyRate,
 						hscodePar: material.hscodePar,
 						importDuty: material.importDuty,
-						hscodeFormM: material.hscodeFormM,
+						hscodeFormM: material.hscodeFormM.toUpperCase(),
 						archived: material.archived,
-						poNum: material.poNum,
+						poNum: material.poNum.toUpperCase(),
 						twentyFtGroupage: material.twentyFtGroupage,
 						fourtyFt: material.fourtyFt,
-						materials: material.materials,
+						materials: material.materials.toUpperCase(),
 						weight: material.weight,
 						berth: material.berth,
-						arrivalMonth: material.arrivalMonth,
+						arrivalMonth: material.arrivalMonth.toUpperCase(),
 						arrivalYear: material.arrivalYear,
-						formM: material.formM,
+						formM: material.formM.toUpperCase(),
 						dutyPaid: material.dutyPaid,
 						billOfLading: material.billOfLading,
-						supplierName: material.supplierName,
-						countryOfSupply: material.countryOfSupply,
-						portOfOrigin: material.portOfOrigin,
-						countryOfOrigin: material.countryOfOrigin,
+						supplierName: material.supplierName.toUpperCase(),
+						countryOfSupply: material.countryOfSupply.toUpperCase(),
+						portOfOrigin: material.portOfOrigin.toUpperCase(),
+						countryOfOrigin: material.countryOfOrigin.toUpperCase(),
 						cifValue: material.cifValue,
-						shippingLine: material.shippingLine,
-						portOfDestination: material.portOfDestination,
+						shippingLine: material.shippingLine.toUpperCase(),
+						portOfDestination:
+							material.portOfDestination.toUpperCase(),
 						dateDelivered: material.dateDelivered,
 						createdDate: material.createdAt,
 						pdfURLLink: materialPDF.pdfPathLink,
-						pdfURLName: materialPDF.pdfName,
+						pdfURLName: materialPDF.pdfName.toUpperCase(),
 					});
 				}
 			});
@@ -189,30 +190,30 @@ const MaterialIndex = () => {
 
 		materials.forEach((material) => {
 			if (value === material.materials) {
-				setagentRefNum(material.agentReference);
-				setpoNumber(material.poNum);
-				setnewMaterials(material.materials);
+				setagentRefNum(material.agentReference.toUpperCase());
+				setpoNumber(material.poNum.toUpperCase());
+				setnewMaterials(material.materials.toUpperCase());
 				setweight(material.weight);
 				setberth(material.berth);
 				settwentyFtGroupage(material.twentyFtGroupage);
 				setfortyFt(material.fourtyFt);
 				setdateDelivered(material.dateDelivered);
-				setarrivalMonth(material.arrivalMonth);
+				setarrivalMonth(material.arrivalMonth.toUpperCase());
 				setarrivalYear(material.arrivalYear);
-				setformM(material.formM);
+				setformM(material.formM.toUpperCase());
 				setdutyPaid(material.dutyPaid);
 				setdutyRate(material.dutyRate);
 				sethsCodePar(material.hscodePar);
 				setbillOfLading(material.billOfLading);
 				setimportDuty(material.importDuty);
-				setsupplierName(material.supplierName);
-				setcountryOfSupply(material.countryOfSupply);
-				setportOfOrigin(material.portOfOrigin);
-				setcountryOfOrigin(material.countryOfOrigin);
+				setsupplierName(material.supplierName.toUpperCase());
+				setcountryOfSupply(material.countryOfSupply.toUpperCase());
+				setportOfOrigin(material.portOfOrigin.toUpperCase());
+				setcountryOfOrigin(material.countryOfOrigin.toUpperCase());
 				setcifValue(material.cifValue);
-				setshippingLine(material.shippingLine);
+				setshippingLine(material.shippingLine.toUpperCase());
 				sethscodeFormM(material.hscodeFormM);
-				setportOfDestination(material.portOfDestination);
+				setportOfDestination(material.portOfDestination.toUpperCase());
 				setarchived(material.archived);
 				setcreatedDate(material.createdAt);
 			}
@@ -224,30 +225,30 @@ const MaterialIndex = () => {
 		const { value } = e.target;
 		materials.forEach((material) => {
 			if (value === material.poNum) {
-				setagentRefNum(material.agentReference);
-				setpoNumber(material.poNum);
-				setnewMaterials(material.materials);
+				setagentRefNum(material.agentReference.toUpperCase());
+				setpoNumber(material.poNum.toUpperCase());
+				setnewMaterials(material.materials.toUpperCase());
 				setweight(material.weight);
 				setberth(material.berth);
 				settwentyFtGroupage(material.twentyFtGroupage);
 				setfortyFt(material.fourtyFt);
 				setdateDelivered(material.dateDelivered);
-				setarrivalMonth(material.arrivalMonth);
+				setarrivalMonth(material.arrivalMonth.toUpperCase());
 				setarrivalYear(material.arrivalYear);
-				setformM(material.formM);
+				setformM(material.formM.toUpperCase());
 				setdutyPaid(material.dutyPaid);
 				setdutyRate(material.dutyRate);
 				sethsCodePar(material.hscodePar);
 				setbillOfLading(material.billOfLading);
 				setimportDuty(material.importDuty);
-				setsupplierName(material.supplierName);
-				setcountryOfSupply(material.countryOfSupply);
-				setportOfOrigin(material.portOfOrigin);
-				setcountryOfOrigin(material.countryOfOrigin);
+				setsupplierName(material.supplierName.toUpperCase());
+				setcountryOfSupply(material.countryOfSupply.toUpperCase());
+				setportOfOrigin(material.portOfOrigin.toUpperCase());
+				setcountryOfOrigin(material.countryOfOrigin.toUpperCase());
 				setcifValue(material.cifValue);
-				setshippingLine(material.shippingLine);
+				setshippingLine(material.shippingLine.toUpperCase());
 				sethscodeFormM(material.hscodeFormM);
-				setportOfDestination(material.portOfDestination);
+				setportOfDestination(material.portOfDestination.toUpperCase());
 				setarchived(material.archived);
 				setcreatedDate(material.createdAt);
 			}
@@ -255,6 +256,7 @@ const MaterialIndex = () => {
 	};
 
 	console.log('get materials =>', materials);
+	console.log('get materials pdf =>', materialsPDF);
 	console.log('get materials pdf =>', materialsPDF);
 
 	if (materials.length === 0) return <h4>Loading...</h4>;

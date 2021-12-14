@@ -8,7 +8,7 @@ function indexRoute(req, res, next) {
 
 function createRoute(req, res, next) {
 	const materialpdf = new MaterialPDF(req.body);
-	material
+	materialpdf
 		.save()
 		.then((materialpdf) => res.status(201).json(materialpdf)) // show http status 200 which is "ok" and reload show page
 		.catch(next);

@@ -32,9 +32,28 @@ const Aside = ({
 					onHandlePONumChange={handlePOChange}
 					materials={materials}
 				/>
-				<Link to='/materials/new'>
-					<button type='button'>Add NeW Data</button>
-				</Link>
+				<div className='field-body'>
+					<div className='field'>
+						<div className='control'>
+							<Link to='/materials/new'>
+								<button className='button is-primary'>
+									Add Data
+								</button>
+							</Link>
+						</div>
+					</div>
+				</div>
+				<div className='field-body'>
+					<div className='field'>
+						<div className='control'>
+							<Link to='/materials/uploadPDF'>
+								<button className='button is-primary'>
+									Upload PDF
+								</button>
+							</Link>
+						</div>
+					</div>
+				</div>
 			</aside>
 		</>
 	);

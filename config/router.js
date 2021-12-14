@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const materialController = require('../controllers/materials');
 const materialPdfController = require('../controllers/materialsPdf');
-const authController = require('../controllers/auth');
-const secureRoute = require('../lib/secureRoute');
+// const authController = require('../controllers/auth');
+// const secureRoute = require('../lib/secureRoute');
 
 router.get('/', (req, res) => {
 	res.json({ message: 'Hello world' });
@@ -11,26 +11,26 @@ router.get('/', (req, res) => {
 router
 	.route('/materials')
 	.get(materialController.index)
-	.post(secureRoute, materialController.create);
+	.post(materialController.create);
 
 router
 	.route('/materials/:id')
 	.get(materialController.show)
-	.put(secureRoute, materialController.update)
-	.delete(secureRoute, materialController.delete);
+	.put(materialController.update)
+	.delete(materialController.delete);
 
 router
 	.route('/materialsPdf')
 	.get(materialPdfController.index)
-	.post(secureRoute, materialPdfController.create);
+	.post(materialPdfController.create);
 
 router
 	.route('/materialsPdf/:id')
 	.get(materialPdfController.show)
-	.put(secureRoute, materialPdfController.update)
-	.delete(secureRoute, materialPdfController.delete);
+	.put(materialPdfController.update)
+	.delete(materialPdfController.delete);
 
-router.post('/register', authController.register);
-router.post('/login', authController.login);
+// router.post('/register', authController.register);
+// router.post('/login', authController.login);
 
 module.exports = router;
