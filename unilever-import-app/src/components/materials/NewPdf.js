@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+const log = console.log.bind(document);
 
 const NewPDF = (props) => {
 	const [formDataPDF, setFormDataPDF] = useState({});
 	const [errors, setErrors] = useState({});
 
+	let navigate = useNavigate();
+
 	const createFormDataPDF = async () => {
 		try {
 			await axios
 				.post('/api/materialsPdf', formDataPDF)
-				.then(() => props.history.push('/materials'));
+				.then(() => navigate('/materials'));
 		} catch (err) {
 			setErrors(err.response.data.errors);
+			log('get errors =>', err.response.data.errors);
 		}
 	};
 
@@ -68,7 +74,6 @@ const NewPDF = (props) => {
 						<h4>Upload PDF file below:</h4>
 						<input type='file' name='uploadFile' id='' />
 						<br />
-						<button type='submit'>Upload</button>
 					</form> */}
 				</div>
 			</section>

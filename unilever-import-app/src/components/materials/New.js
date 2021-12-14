@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocalStorage } from '../../Utils/useLocalStorage';
 import axios from 'axios';
 
 const log = console.log.bind(document);
 // import Auth from '../../lib/Auth';
 
 const New = () => {
-	const [formData, setFormData] = useState({});
+	const [formData, setFormData] = useLocalStorage('formData', {});
 	const [errors, setErrors] = useState({});
 
 	const navigate = useNavigate();
