@@ -10,6 +10,8 @@ import Aside from '../AsideComponents/Aside';
 import { axiosInstance } from '../../Utils/API';
 import Button from '../OtherComponents/Button';
 
+const log = console.log.bind(document);
+
 const MaterialIndex = () => {
 	const [materials, setmaterials] = useState([]);
 	const [agentRefGrouping, setagentRefGrouping] = useState([]);
@@ -51,7 +53,7 @@ const MaterialIndex = () => {
 					.get('/materials')
 					.then((res) => setmaterials(res.data));
 			} catch (err) {
-				console.log('get error materials =>', err);
+				log('get error materials =>', err);
 			}
 		};
 		getMaterials();
@@ -64,7 +66,7 @@ const MaterialIndex = () => {
 					.get('/materialsPdf')
 					.then((res) => setMaterialsPDF(res.data));
 			} catch (err) {
-				console.log('get error pdf =>', err);
+				log('get error pdf =>', err);
 			}
 		};
 		getMaterialsPDF();
@@ -255,9 +257,9 @@ const MaterialIndex = () => {
 		});
 	};
 
-	console.log('get materials =>', materials);
-	console.log('get materials pdf =>', materialsPDF);
-	console.log('get materials pdf =>', materialsPDF);
+	log('get materials =>', materials);
+	log('get materials pdf =>', materialsPDF);
+	log('get materials pdf =>', materialsPDF);
 
 	if (materials.length === 0) return <h4>Loading...</h4>;
 	return (
